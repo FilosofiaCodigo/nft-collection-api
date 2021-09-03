@@ -12,7 +12,6 @@ const express = require('express')
 
 const app = express()
 
-app.use(express.json())
 app.use(express.static(__dirname + 'public'))
 app.use('/images', express.static(__dirname + '/images'));
 
@@ -32,6 +31,7 @@ async function getContractPublicVariable(res, nft_id) {
   {
     return_value = fs.readFileSync("./metadata/" + nft_id).toString().trim()
   }
+  res.setHeader('Content-Type', 'application/json');
   res.send(return_value)
 }
 
