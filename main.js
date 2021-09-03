@@ -16,7 +16,7 @@ app.use(express.static(__dirname + 'public'))
 app.use('/images', express.static(__dirname + '/images'));
 
 async function getContractPublicVariable(res, nft_id) {
-  var token_count = await contract.methods.token_count().call()
+  var token_count = await contract.methods.totalMint().call()
   let return_value = {}
   if(nft_id < 0)
   {
