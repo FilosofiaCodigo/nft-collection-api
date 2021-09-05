@@ -1,8 +1,7 @@
 let METADATA_DIRECTORY = './metadata/'
 let IMAGES_DIRECTORY = './images/'
 let BUCKET_NAME = 'funkycrocs'
-let IMAGE_BASE_URL = 'https://storage.cloud.google.com/funkycrocs/'
-
+let IMAGE_BASE_URL = 'https://storage.googleapis.com/funkycrocs/'
 const fs = require('fs')
 const crypto = require('crypto')
 const path = require('path');
