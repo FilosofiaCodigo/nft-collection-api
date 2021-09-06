@@ -13,7 +13,7 @@ async function uploadSingleFile(file_path, file_name) {
   await storage.bucket(BUCKET_NAME).upload(file_path, {
     destination: file_name,
   });
-  console.log(`${file_path} uploaded to ${BUCKET_NAME}`);
+  console.log(`${file_path} uploaded to ${BUCKET_NAME}`)
 }
 
 async function uploadFileList(files) {
@@ -25,10 +25,10 @@ async function uploadFileList(files) {
     let image_name = metadata_json["name"]
     var file_name = crypto.randomBytes(20).toString('hex')
     metadata_json["image"] = IMAGE_BASE_URL + file_name
-    fs.writeFileSync(METADATA_DIRECTORY + file, JSON.stringify(metadata_json));
-    await uploadSingleFile(IMAGES_DIRECTORY + file + ".png", file_name).catch(console.error);
-    console.log(`Uploaded ${file}`);
+    fs.writeFileSync(METADATA_DIRECTORY + file, JSON.stringify(metadata_json))
+    await uploadSingleFile(IMAGES_DIRECTORY + file + ".png", file_name).catch(console.error)
+    console.log(`Uploaded ${file}`)
   }
 }
 
-fs.readdir(METADATA_DIRECTORY, (err, files) => uploadFileList(files));
+fs.readdir(METADATA_DIRECTORY, (err, files) => uploadFileList(files))
