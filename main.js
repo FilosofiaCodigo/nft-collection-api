@@ -1,6 +1,7 @@
-let MAX_SUPPLY = 20
-let CONTRACT_ADDRESS = "0xB2Fb4178Fb98D546dE65ce57D0e7C07e355b19B9"
+const MAX_SUPPLY = 20
+const CONTRACT_ADDRESS = "0xB2Fb4178Fb98D546dE65ce57D0e7C07e355b19B9"
 const PORT = 3000
+const IS_REVEALED = false
 
 const Web3 = require('web3')
 const fs = require('fs')
@@ -15,7 +16,7 @@ const app = express()
 app.use(express.static(__dirname + 'public'))
 app.use('/unrevealed', express.static(__dirname + '/unrevealed'));
 
-async function getContractPublicVariable(res, nft_id) {
+async function serveMetadata(res, nft_id) {
   var token_count = await contract.methods.totalMint().call()
   let return_value = {}
   if(nft_id < 0)
@@ -36,7 +37,20 @@ async function getContractPublicVariable(res, nft_id) {
 }
 
 app.get('/:id', (req, res) => {
-  getContractPublicVariable(res, req.params.id)
+  if(!IS_REVEALED)
+  {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(
+      {
+        "name":"Unrevealed Croc",
+        "description":"???",
+        "image":"http://134.209.33.178:3000/unrevealed/image.png",
+        "attributes":[{"???":"???"}]
+      })
+  }else
+  {
+    serveMetadata(res, req.params.id)
+  }
 })
 
 app.listen(PORT, () => {
