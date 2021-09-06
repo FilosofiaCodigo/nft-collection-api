@@ -5,10 +5,10 @@ const IS_REVEALED = true
 
 const Web3 = require('web3')
 const fs = require('fs')
-var Contract = require('web3-eth-contract')
-Contract.setProvider('https://rinkeby.infura.io/v3/a3e70735b4cf401b9148e1fea8f5a288')
 const abi = require('./Contract.json').abi
-var contract = new Contract(abi, CONTRACT_ADDRESS)
+const Contract = require('web3-eth-contract')
+Contract.setProvider('https://rinkeby.infura.io/v3/a3e70735b4cf401b9148e1fea8f5a288')
+const contract = new Contract(abi, CONTRACT_ADDRESS)
 const express = require('express')
 
 const app = express()
@@ -17,7 +17,7 @@ app.use(express.static(__dirname + 'public'))
 app.use('/unrevealed', express.static(__dirname + '/unrevealed'));
 
 async function serveMetadata(res, nft_id) {
-  var token_count = await contract.methods.totalMint().call()
+  var token_count = parseInt(await contract.methods.totalMint().call())
   let return_value = {}
   if(nft_id < 0)
   {
@@ -32,14 +32,17 @@ async function serveMetadata(res, nft_id) {
   {
     return_value = fs.readFileSync("./metadata/" + nft_id).toString().trim()
   }
-  res.setHeader('Content-Type', 'application/json');
   res.send(return_value)
 }
 
 app.get('/:id', (req, res) => {
-  if(!IS_REVEALED)
+  res.setHeader('Content-Type', 'application/json');
+  if(isNaN(req.params.id))//in not number
   {
-    res.setHeader('Content-Type', 'application/json');
+    res.send({})    
+  }
+  else if(!IS_REVEALED)
+  {
     res.send(
       {
         "name":"Unrevealed Croc",
