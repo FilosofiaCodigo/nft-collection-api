@@ -1,7 +1,7 @@
 const MAX_SUPPLY = 20
 const CONTRACT_ADDRESS = "0xB2Fb4178Fb98D546dE65ce57D0e7C07e355b19B9"
 const PORT = 3000
-const IS_REVEALED = false
+const IS_REVEALED = true
 
 const Web3 = require('web3')
 const fs = require('fs')
