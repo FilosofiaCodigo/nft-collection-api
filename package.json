@@ -8,7 +8,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node scripts/start.js",
+    "shuffle": "node scripts/shuffle.js",
+    "upload_files_gcs": "GOOGLE_APPLICATION_CREDENTIALS=gcs.json node scripts/upload_files_gcs.js",
+    "remove_none_traits": "node scripts/remove_none_traits.js"
   },
   "repository": {
     "type": "git",

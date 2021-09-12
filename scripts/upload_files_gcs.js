@@ -2,6 +2,7 @@ let METADATA_DIRECTORY = './../metadata/'
 let IMAGES_DIRECTORY = './../images/'
 let BUCKET_NAME = 'funkycrocs'
 let IMAGE_BASE_URL = 'https://storage.googleapis.com/funkycrocs/'
+
 const fs = require('fs')
 const crypto = require('crypto')
 const path = require('path');
@@ -18,11 +19,8 @@ async function uploadSingleFile(file_path, file_name) {
 
 async function uploadFileList(files) {
   for (const file of files) {
-    console.log(`Uploading ${file}`);
     let rawdata = fs.readFileSync(METADATA_DIRECTORY + file)
     let metadata_json = JSON.parse(rawdata)
-    let image_path = metadata_json["image"]
-    let image_name = metadata_json["name"]
     var file_name = crypto.randomBytes(20).toString('hex')
     metadata_json["image"] = IMAGE_BASE_URL + file_name
     fs.writeFileSync(METADATA_DIRECTORY + file, JSON.stringify(metadata_json))

@@ -13,7 +13,7 @@ const UNREVEALED_METADATA = {
 const fs = require('fs')
 const express = require('express')
 const Web3 = require('web3')
-const abi = require('./Contract.json').abi
+const abi = require('../Contract.json').abi
 const Contract = require('web3-eth-contract')
 Contract.setProvider(PROVIDER_URL)
 const contract = new Contract(abi, CONTRACT_ADDRESS)
