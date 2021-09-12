@@ -7,7 +7,7 @@
 | Shuffle | ✔ |
 | Reveal | ✔ |
 | Handle _none_ traits | ✔ |
-| Google Cloud Bucket | ✔ |
+| Google Cloud Storage | ✔ |
 | IPFS | Coming soon |
 
 ## Dependencies
