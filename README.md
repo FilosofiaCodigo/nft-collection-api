@@ -1,3 +1,5 @@
+# NFT Collection API
+
 ## Features
 
 | Feature | Supported |
@@ -24,9 +26,9 @@ npm start
 
 ## Auxiliary Scripts
 
-* `npm shuffle`: randomizes the metadata to make the minting process exciting.
-* `npm upload_files_gcs`: uploads for Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory.
-* `npm remove_none_traits`: removes all traits marked as "none" to make the metadata rarity.tools friendly.
+* `npm shuffle`: randomizes the metadata to make the minting process exciting
+* `npm upload_files_gcs`: uploads for Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory
+* `npm remove_none_traits`: removes all traits marked as "none" to make the metadata rarity.tools friendly
 
 
 ## Checklist

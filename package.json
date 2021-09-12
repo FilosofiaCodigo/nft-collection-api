@@ -1,7 +1,7 @@
 {
-  "name": "nft-api",
+  "name": "nft-collection-api",
   "version": "1.0.0",
-  "description": "NFT Metadata JSON API supporting diverse features.",
+  "description": "Node.js API for NFT collections supporting diverse features",
   "main": "main.js",
   "dependencies": {
     "web3": "^1.5.2"
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Turupawn/Crocs.git"
+    "url": "git+https://github.com/FilosofiaCodigo/nft-collection-api.git"
   },
   "keywords": [
     "nft",
@@ -27,7 +27,7 @@
   "author": "Filosofía Código",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Turupawn/Crocs/issues"
+    "url": "https://github.com/FilosofiaCodigo/nft-collection-api/issues"
   },
-  "homepage": "https://github.com/Turupawn/Crocs#readme"
+  "homepage": "https://github.com/FilosofiaCodigo/nft-collection-api#readme"
 }
