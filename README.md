@@ -20,7 +20,7 @@ JSON API that servers ERC-721 compatible metadata for a NFT collection on the bl
 npm install
 ```
 
-## Run 🏃‍♂️
+## Run 🚀
 
 ```
 npm start
