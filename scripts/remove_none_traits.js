@@ -1,4 +1,4 @@
-let METADATA_DIRECTORY = './metadata/'
+let METADATA_DIRECTORY = './../metadata/'
 const fs = require('fs')
 const path = require('path')
 

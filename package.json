@@ -1,0 +1,29 @@
+{
+  "name": "nft-api",
+  "version": "1.0.0",
+  "description": "NFT Metadata JSON API supporting diverse features.",
+  "main": "main.js",
+  "dependencies": {
+    "web3": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Turupawn/Crocs.git"
+  },
+  "keywords": [
+    "nft",
+    "metadata",
+    "json",
+    "api"
+  ],
+  "author": "Filosofía Código",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turupawn/Crocs/issues"
+  },
+  "homepage": "https://github.com/Turupawn/Crocs#readme"
+}
