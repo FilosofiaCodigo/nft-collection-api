@@ -12,7 +12,7 @@ JSON API that servers ERC-721 compatible metadata for an NFT collection on the b
 | Reveal | ✔ |
 | Handle _none_ traits | ✔ |
 | Google Cloud Storage | ✔ |
-| IPFS | Coming soon |
+| IPFS | ✔ |
 
 ## Dependencies ⚒
 
@@ -28,9 +28,10 @@ npm start
 
 ## Auxiliary Scripts 👩‍⚕️
 
-* `npm shuffle`: randomizes the metadata to make the minting process exciting
-* `npm upload_files_gcs`: uploads for Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory
-* `npm remove_none_traits`: removes all traits marked as "none" to make the metadata rarity.tools friendly
+* `npm run shuffle`: randomizes the metadata to make the minting process exciting
+* `npm run upload_images_update`: uploads images to IPFS
+* `npm run upload_images_gcs`: uploads to Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory
+* `npm run remove_none_traits`: removes all traits marked as "none" to make the metadata rarity.tools friendly
 
 
 ## Checklist 📝
