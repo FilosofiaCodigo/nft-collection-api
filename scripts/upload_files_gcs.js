@@ -1,5 +1,5 @@
-let METADATA_DIRECTORY = './../metadata/'
-let IMAGES_DIRECTORY = './../images/'
+let METADATA_DIRECTORY = './metadata/'
+let IMAGES_DIRECTORY = './images/'
 let BUCKET_NAME = 'funkycrocs'
 let IMAGE_BASE_URL = 'https://storage.googleapis.com/funkycrocs/'
 
