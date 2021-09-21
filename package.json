@@ -4,6 +4,7 @@
   "description": "Node.js API for NFT collections supporting diverse features",
   "main": "main.js",
   "dependencies": {
+    "@kleros/file-to-ipfs": "^0.3.2",
     "web3": "^1.5.2"
   },
   "devDependencies": {},
@@ -12,6 +13,7 @@
     "start": "node scripts/start.js",
     "shuffle": "node scripts/shuffle.js",
     "upload_files_gcs": "GOOGLE_APPLICATION_CREDENTIALS=gcs.json node scripts/upload_files_gcs.js",
+    "upload_files_ipfs": "node scripts/upload_files_ipfs.js",
     "remove_none_traits": "node scripts/remove_none_traits.js"
   },
   "repository": {
