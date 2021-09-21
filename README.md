@@ -1,6 +1,6 @@
 # NFT Collection API 🖼️
 
-JSON API that servers ERC-721 compatible metadata for a NFT collection on the blockchain.
+JSON API that servers ERC-721 compatible metadata for an NFT collection on the blockchain.
 
 ## Features 👀
 
