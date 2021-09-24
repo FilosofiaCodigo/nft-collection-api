@@ -11,8 +11,8 @@ JSON API that servers ERC-721 compatible metadata for an NFT collection on the b
 | Shuffle | ✔ |
 | Reveal | ✔ |
 | Handle _none_ traits | ✔ |
-| Google Cloud Storage | ✔ |
 | IPFS | ✔ |
+| Google Cloud Storage | ✔ |
 
 ## Dependencies ⚒
 
@@ -47,9 +47,10 @@ Make sure you follow all these steps when launching this API:
 7. run `npm shuffle`
 8. run `npm remove_none_traits` if needed
 9. Upload your images, choose between CGS or IPFS
+  * IPFS
+    * Run `npm upload_images_gcs`
   * Google Cloud Services
     * Put your `gcs.json` keyfile on this project directory
-    * Run `npm upload_files_gcs`
+    * Run `npm upload_images_gcs`
     * Install the google cloud console and run this to open the files in the browser instead of downloading them by downloading the Google Cloud SDK and running this: `gsutil -m setmeta -h "Content-Type: image/png" -h "Content-Disposition: inline;" gs://YOURBUCKETNAME/*`. Remember to set `YOURBUCKETNAME`.
-  * IPFS (guide coming soon)
 10. Once you want to reveal the Images and Metadata set the `IS_REVEALED` to `true` on `scripts/start.js`, stop and restart the server
