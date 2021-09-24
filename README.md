@@ -30,7 +30,8 @@ npm start
 
 * `npm run shuffle`: randomizes the metadata to make the minting process exciting
 * `npm run upload_images_update`: uploads images to IPFS
-* `npm run upload_images_gcs`: uploads to Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory
+* `npm run upload_images_ipfs`: uploads images to IPFS
+* `npm run upload_images_gcs`: uploads images to Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory
 * `npm run remove_none_traits`: removes all traits marked as "none" to make the metadata rarity.tools friendly
 
 
@@ -44,13 +45,13 @@ Make sure you follow all these steps when launching this API:
 4. Set the variables on the top of `scripts/start.js`, keep the `IS_REVEALED` variable set to `false` to start the server with _unrevealed mode_
 5. Start the server with `npm start`
 6. Put all your images and metadata on `./images/` and `./metadata/` respectively
-7. run `npm shuffle`
-8. run `npm remove_none_traits` if needed
+7. run `npm run shuffle`
+8. run `npm run remove_none_traits` if needed
 9. Upload your images, choose between CGS or IPFS
   * IPFS
-    * Run `npm upload_images_gcs`
+    * Run `npm run upload_images_gcs`
   * Google Cloud Services
     * Put your `gcs.json` keyfile on this project directory
-    * Run `npm upload_images_gcs`
+    * Run `npm run upload_images_gcs`
     * Install the google cloud console and run this to open the files in the browser instead of downloading them by downloading the Google Cloud SDK and running this: `gsutil -m setmeta -h "Content-Type: image/png" -h "Content-Disposition: inline;" gs://YOURBUCKETNAME/*`. Remember to set `YOURBUCKETNAME`.
 10. Once you want to reveal the Images and Metadata set the `IS_REVEALED` to `true` on `scripts/start.js`, stop and restart the server
