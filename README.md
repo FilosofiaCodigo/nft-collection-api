@@ -22,8 +22,21 @@ npm install
 
 ## Run 🚀
 
+## Development mode
+
 ```
 npm start
+```
+
+## Production mode commands
+
+```
+npm i -g pm2
+pm2 start main.js
+pm2 kill
+pm2 list
+pm2 restart
+pm2 stop [ID]
 ```
 
 ## Auxiliary Scripts 👩‍⚕️
