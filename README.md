@@ -62,7 +62,7 @@ Make sure you follow all these steps when launching this API:
 9. run `npm run remove_none_traits` if needed
 10. Upload your images, choose between CGS or IPFS
   * IPFS
-    * Run `npm run upload_images_gcs`
+    * Run `npm run upload_images_ipfs`
   * Google Cloud Services
     * Put your `gcs.json` keyfile on this project directory
     * Run `npm run upload_images_gcs`
