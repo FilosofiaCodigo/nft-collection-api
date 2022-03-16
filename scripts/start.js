@@ -13,7 +13,7 @@ const fs = require('fs')
 const express = require('express')
 const Web3 = require('web3')
 require('dotenv').config()
-const abi = require('../Contract.json').abi
+const abi = require('../Contract.json')
 const Contract = require('web3-eth-contract')
 Contract.setProvider(process.env.RINKEBY_RPC_URL)
 const contract = new Contract(abi, CONTRACT_ADDRESS)
