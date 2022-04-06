@@ -9,7 +9,7 @@ require("./tasks/mint.js");
 require("./tasks/sell.js");
 require("@nomiclabs/hardhat-etherscan");
 
-const { ALCHEMY_KEY, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API_KEY } = process.env;
+const { RINKEBY_RPC_URL, MAINNET_RPC_URL, MUMBAI_RPC_URL, POLYGON_RPC_URL, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API_KEY } = process.env;
 
 module.exports = {
     solidity: "0.8.1",
@@ -17,12 +17,23 @@ module.exports = {
     networks: {
         hardhat: {},
         rinkeby: {
-            url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_KEY}`,
+            chainId: 4,
+            url: `${RINKEBY_RPC_URL}`,
             accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
         },
         ethereum: {
             chainId: 1,
-            url: `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_KEY}`,
+            url: `${MAINNET_RPC_URL}`,
+            accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
+        },
+        mumbai: {
+            chainId: 80001,
+            url: `${MUMBAI_RPC_URL}`,
+            accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
+        },
+        polygon: {
+            chainId: 137,
+            url: `${POLYGON_RPC_URL}`,
             accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
         },
     },

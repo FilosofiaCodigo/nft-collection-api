@@ -1,5 +1,5 @@
 const { task } = require("hardhat/config");
-const { getEnvVariable } = require("./helpers");
+const { getEnvVariable, getProvider } = require("./helpers");
 
 const opensea = require("opensea-js");
 const { WyvernSchemaName } = require('opensea-js/lib/types');
@@ -18,7 +18,7 @@ task("sell", "Create English action sale on OpenSea")
     .setAction(async function (taskArguments, hre) {
 
       const infuraRpcSubprovider = new RPCSubprovider({
-        rpcUrl: getEnvVariable("RINKEBY_RPC_URL"),
+        rpcUrl: getEnvVariable("SELECTED_RPC_URL"),
       });
 
       const privateKeyWalletSubprovider = new PrivateKeyWalletSubprovider(getEnvVariable("ACCOUNT_PRIVATE_KEY"), 4);
@@ -31,7 +31,7 @@ task("sell", "Create English action sale on OpenSea")
       const seaport = new OpenSeaPort(
         providerEngine,
           {
-            networkName: opensea.Network.Rinkeby,
+            networkName: getEnvVariable(NETWORK),
             // apiKey: API_KEY,
           },
           (arg) => console.log(arg)
