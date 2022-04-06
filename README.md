@@ -22,6 +22,35 @@ npm install
 
 ## Run 🚀
 
+## Background work
+
+### Deploy smart-contracts and mint a couple of tokens
+```
+source .env
+
+npx hardhat compile --verbose
+npx hardhat check-balance
+npx hardhat deploy
+# MANUALLY SET NFT_CONTRACT_ADDRESS ON ENV FILE
+
+npx hardhat verify $NFT_CONTRACT_ADDRESS
+npx ipfs-car --pack images --output images.car
+# MANUALLY SET ALL METADATA IMAGE URL TO IPFS ADDRESS
+
+npx ipfs-car --pack metadata --output metadata.car
+# MANUALLY SET BASE URL ENV VAR
+
+npx hardhat set-base-token-uri --base-url $BASE_URL
+npx hardhat mint --address $OWNER_ADDRESS
+```
+### Get listed on Open Sea
+https://opensea.io/get-listed
+
+## Sell it on opensea
+```
+npx hardhat sell --token-id 1 --start-price 0.001
+```
+
 ## Development mode
 
 ```

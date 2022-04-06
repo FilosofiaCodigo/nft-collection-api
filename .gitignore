@@ -1,3 +1,7 @@
 node_modules
 gcs.json
 .env
+artifacts
+cache
+*.car
+.DS_Store

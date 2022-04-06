@@ -4,11 +4,20 @@
   "description": "Node.js API for NFT collections supporting diverse features",
   "main": "main.js",
   "dependencies": {
+    "@0x/subproviders": "^6.6.5",
     "@kleros/file-to-ipfs": "^0.3.2",
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
     "dotenv": "^10.0.0",
-    "web3": "^1.5.2"
+    "ethers": "^5.5.2",
+    "hardhat": "^2.7.0",
+    "node-fetch": "^2.6.6",
+    "opensea-js": "^3.0.2",
+    "web3": "^1.7.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.4.0"
+  },
   "scripts": {
     "test": "test",
     "start": "node scripts/start.js",
@@ -20,6 +29,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FilosofiaCodigo/nft-collection-api.git"
+  },
+  "engines": {
+    "node": "^16"
   },
   "keywords": [
     "nft",
