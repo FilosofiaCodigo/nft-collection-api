@@ -15,7 +15,11 @@ function getEnvVariable(key, defaultValue) {
 
 // Helper method for fetching a connection provider to the Ethereum network
 function getProvider() {
-    return ethers.getDefaultProvider(getEnvVariable("SELECTED_NETWORK"));
+    // return ethers.getDefaultProvider(getEnvVariable("SELECTED_NETWORK"), {
+    //     etherscan: getEnvVariable("ETHERSCAN_API_KEY"),
+    //     alchemy: getEnvVariable("SELECTED_RPC_API_KEY")
+    // });
+    return new ethers.providers.AlchemyProvider(getEnvVariable("SELECTED_NETWORK"), getEnvVariable("SELECTED_RPC_API_KEY"));
 }
 
 // Helper method for fetching a wallet account using an environment variable for the PK

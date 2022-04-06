@@ -27,7 +27,7 @@ npm install --dev
 ## Background Smart-Contract work
 
 ### Setup basic Env vars
-- RPC urls are define by the Alchemy or Infura account.
+- RPC urls are define by the Alchemy account. Code changes must be made to use Infura.
 ```
 RINKEBY_RPC_URL=""
 MAINNET_RPC_URL=""
@@ -35,6 +35,7 @@ MUMBAI_RPC_URL=""
 POLYGON_RPC_URL="
 ```
 - The `SELECTED_RPC_URL` must be one of the above
+- The `SELECTED_RPC_API_KEY` must be the API from Alchemy.
 - The `SELECTED_NETWORK` is the name of the network you want to deploy. See `hardhat.config.js` file for options.
 - The `OWNER_ADDRESS` and `ACCOUNT_PRIVATE_KEY` are the address and account private key you are using to deploy the smart-contract.
 - The `NFT_CONTRACT_ADDRESS` is determined by the `npx hardhat deploy` script 
@@ -76,6 +77,7 @@ The `NFT_CONTRACT_ADDRESS` env var is determined by the `npx hardhat deploy` scr
 
 **OPTIONAL** The `ETHERSCAN_API_KEY` env var can be set up here by creating an account on Etherscan that allow you to attach a smart-contract source to a deployed contract.
 ```
+source .env
 npx hardhat verify $NFT_CONTRACT_ADDRESS
 ```
 Now set the URL for the NFTs metadata on the smart-contract. 

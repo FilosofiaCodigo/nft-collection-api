@@ -9,11 +9,11 @@ require("./tasks/mint.js");
 require("./tasks/sell.js");
 require("@nomiclabs/hardhat-etherscan");
 
-const { RINKEBY_RPC_URL, MAINNET_RPC_URL, MUMBAI_RPC_URL, POLYGON_RPC_URL, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API_KEY } = process.env;
+const { RINKEBY_RPC_URL, MAINNET_RPC_URL, MUMBAI_RPC_URL, POLYGON_RPC_URL, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API_KEY, SELECTED_NETWORK} = process.env;
 
 module.exports = {
     solidity: "0.8.1",
-    defaultNetwork: "rinkeby",
+    defaultNetwork: SELECTED_NETWORK,
     networks: {
         hardhat: {},
         rinkeby: {
@@ -21,17 +21,17 @@ module.exports = {
             url: `${RINKEBY_RPC_URL}`,
             accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
         },
-        ethereum: {
+        mainnet: {
             chainId: 1,
             url: `${MAINNET_RPC_URL}`,
             accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
         },
-        mumbai: {
+        maticmum: {
             chainId: 80001,
             url: `${MUMBAI_RPC_URL}`,
             accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
         },
-        polygon: {
+        matic: {
             chainId: 137,
             url: `${POLYGON_RPC_URL}`,
             accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]

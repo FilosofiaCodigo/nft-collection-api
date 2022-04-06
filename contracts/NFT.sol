@@ -24,7 +24,7 @@ contract NFT is ERC721, PullPayment, Ownable {
 
   function mintTo(address recipient) public payable returns (uint256) {
     // uint256 tokenId = currentTokenId.current();
-    require(msg.sender == owner(), "Token doesn't exist");
+    require(msg.sender == owner(), "Minter must be the Owner");
     require(msg.value >= MINT_PRICE, "Transaction value did not equal the mint price");
 
     currentTokenId.increment();
