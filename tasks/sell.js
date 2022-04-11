@@ -86,7 +86,7 @@ task("sell", "Create English action sale on OpenSea")
           paymentTokenAddress: wethAddress,
           accountAddress: getEnvVariable("OWNER_ADDRESS"),
         });
-
+          
         console.log(
           `Successfully created an English auction sell order! ${englishAuctionSellOrder.asset.openseaLink}\n`
         );

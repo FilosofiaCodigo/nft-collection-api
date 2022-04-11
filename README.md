@@ -26,6 +26,10 @@ npm install --dev
 
 ## Background Smart-Contract work
 
+Keep an eye on https://status.opensea.io/
+Get the right chain data from https://chainlist.org/
+
+
 ### Setup basic Env vars
 - RPC urls are define by the Alchemy account. Code changes must be made to use Infura.
 ```
