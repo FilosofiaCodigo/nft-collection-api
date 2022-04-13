@@ -13,14 +13,14 @@
     "hardhat": "^2.7.0",
     "node-fetch": "^2.6.6",
     "opensea-js": "^3.0.2",
-    "web3": "^1.7.1"
+    "web3": "^1.7.1",
+    "node-p5": "^1.0.4",
+    "yargs": "^17.4.1"
   },
   "devDependencies": {
     "@openzeppelin/contracts": "^4.4.0"
   },
   "scripts": {
-    "test": "test",
-    "start": "node scripts/start.js",
     "shuffle": "node scripts/shuffle.js",
     "upload_images_gcs": "GOOGLE_APPLICATION_CREDENTIALS=gcs.json node scripts/upload_images_gcs.js",
     "upload_images_ipfs": "node scripts/upload_images_ipfs.js",

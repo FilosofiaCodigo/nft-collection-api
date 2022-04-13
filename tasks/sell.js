@@ -27,8 +27,8 @@ task("sell", "Create English action sale on OpenSea")
       providerEngine.addProvider(privateKeyWalletSubprovider);
       providerEngine.addProvider(infuraRpcSubprovider);
       providerEngine.start();
-      
-      let wyvernNetName = undefined; 
+
+      let wyvernNetName = undefined;
       switch (getEnvVariable("SELECTED_NETWORK")) {
         case 'rinkeby':
           wyvernNetName = "rinkeby";
@@ -51,11 +51,11 @@ task("sell", "Create English action sale on OpenSea")
           },
           (arg) => console.log(arg)
         );
-        
-        // const token = (await seaport.api.getPaymentTokens({ symbol: 'ETH'})).tokens[0];
+
+        // const token = (await seaport.api.getPaymentTokens({ symbol: 'ETH'})).tokens[0.json];
         // console.log(token)
         const expirationTime = Math.round(Date.now() / 1000 + 60 * 60 * 24);
-        
+
         // Example: English auction.
         console.log("English auctioning an item in DAI...");
         let wethAddress = undefined;
@@ -86,7 +86,7 @@ task("sell", "Create English action sale on OpenSea")
           paymentTokenAddress: wethAddress,
           accountAddress: getEnvVariable("OWNER_ADDRESS"),
         });
-          
+
         console.log(
           `Successfully created an English auction sell order! ${englishAuctionSellOrder.asset.openseaLink}\n`
         );

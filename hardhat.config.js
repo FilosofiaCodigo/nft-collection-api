@@ -12,7 +12,7 @@ require("@nomiclabs/hardhat-etherscan");
 const { RINKEBY_RPC_URL, MAINNET_RPC_URL, MUMBAI_RPC_URL, POLYGON_RPC_URL, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API_KEY, SELECTED_NETWORK} = process.env;
 
 module.exports = {
-    solidity: "0.8.1",
+    solidity: "0.json.8.1",
     defaultNetwork: SELECTED_NETWORK,
     networks: {
         hardhat: {},

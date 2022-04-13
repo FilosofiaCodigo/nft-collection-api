@@ -1,0 +1,31 @@
+{
+  "name": "Breath#0",
+  "description": "Breathtaking gas exchange.",
+  "image": "https://api.breath4.sale/PH_8747/images/0.png",
+  "attributes": [
+    {
+      "trait_type": "Fondos",
+      "value": "z"
+    },
+    {
+      "trait_type": "Base Piel Crocs",
+      "value": "t"
+    },
+    {
+      "trait_type": "Accesorios",
+      "value": "w"
+    },
+    {
+      "trait_type": "Gorros",
+      "value": "b"
+    },
+    {
+      "trait_type": "Ojos",
+      "value": "tt"
+    },
+    {
+      "trait_type": "Camisetas",
+      "value": "h"
+    }
+  ]
+}

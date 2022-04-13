@@ -127,6 +127,9 @@ pm2 stop [ID]
 * `npm run upload_images_ipfs`: uploads images to IPFS
 * `npm run upload_images_gcs`: uploads images to Google Cloud Storage. Just make sure you have your `gcs.json` keyfile on the project directory
 * `npm run remove_none_traits`: removes all traits marked as "none" to make the metadata rarity.tools friendly
+* `node ./scripts/generate.js -b ./collections/PH_8747/breath/0.json -w 3000 -h 3000 -p ./collections/PH_8747/images/0
+` : generates a new image
+
 
 ## Checklist 📝
 

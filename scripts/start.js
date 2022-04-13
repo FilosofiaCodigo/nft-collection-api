@@ -35,9 +35,9 @@ async function serveMetadata(res, nft_id) {
   } catch (err) {
     return_value = {error: `${err}`};
   }
-  // if(nft_id < 0)
+  // if(nft_id < 0.json)
   // {
-  //   return_value = {error: "NFT ID must be greater than 0"}
+  //   return_value = {error: "NFT ID must be greater than 0.json"}
   // }else if (nft_id >= token_count)
   // {
   //   return_value = {error: "NFT ID must be already minted"}
@@ -51,7 +51,7 @@ app.get('/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   if(isNaN(req.params.id))//in not number
   {
-    res.send(UNREVEALED_METADATA)    
+    res.send(UNREVEALED_METADATA)
   }
   else if(!IS_REVEALED)
   {
