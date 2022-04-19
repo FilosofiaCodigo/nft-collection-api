@@ -13,8 +13,8 @@ const PrivateKeyWalletSubprovider = require("@0x/subproviders")
 
 
 task("sell", "Create English action sale on OpenSea")
-    .addParam("tokenId", "NFT Token Id")
-    .addParam("startPrice", "Starting auction price")
+    .addParam("tokenid", "NFT Token Id")
+    .addParam("startprice", "Starting auction price")
     .setAction(async function (taskArguments, hre) {
 
       const infuraRpcSubprovider = new RPCSubprovider({
@@ -73,15 +73,15 @@ task("sell", "Create English action sale on OpenSea")
             wethAddress = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619";
             break;
         }
-        console.log(`Account ${getEnvVariable("OWNER_ADDRESS")} selling ${getEnvVariable("NFT_CONTRACT_ADDRESS")} token #${taskArguments.tokenId} on ${getEnvVariable("SELECTED_NETWORK")} for ${taskArguments.startPrice} payment ERC ${wethAddress}.`);
+        console.log(`Account ${getEnvVariable("OWNER_ADDRESS")} selling ${getEnvVariable("NFT_CONTRACT_ADDRESS")} token #${taskArguments.tokenid} on ${getEnvVariable("SELECTED_NETWORK")} for ${taskArguments.startprice} payment ERC ${wethAddress}.`);
         try {
             const englishAuctionSellOrder = await seaport.createSellOrder({
               asset: {
-                tokenId: taskArguments.tokenId,
+                tokenId: taskArguments.tokenid,
                 tokenAddress: getEnvVariable("NFT_CONTRACT_ADDRESS"),
                 // schemaName: WyvernSchemaName.ERC721
               },
-              startAmount: taskArguments.startPrice,
+              startAmount: taskArguments.startprice,
               expirationTime: expirationTime,
               waitForHighestBid: true,
               paymentTokenAddress: wethAddress,

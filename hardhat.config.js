@@ -7,6 +7,7 @@ require("@nomiclabs/hardhat-ethers");
 require("./tasks/deploy.js");
 require("./tasks/mint.js");
 require("./tasks/sell.js");
+require("./tasks/sell2.js");
 require("@nomiclabs/hardhat-etherscan");
 require("hardhat-gas-reporter");
 
