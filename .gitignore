@@ -5,3 +5,4 @@ artifacts
 cache
 *.car
 .DS_Store
+release

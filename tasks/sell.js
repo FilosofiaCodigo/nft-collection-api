@@ -73,21 +73,28 @@ task("sell", "Create English action sale on OpenSea")
             wethAddress = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619";
             break;
         }
-        console.log(`Account ${getEnvVariable("OWNER_ADDRESS")} selling ${getEnvVariable("NFT_CONTRACT_ADDRESS")} token #${taskArguments.tokenId} on ${getEnvVariable("SELECTED_NETWORK")} for ${taskArguments.startPrice} ${wethAddress}.`);
-        const englishAuctionSellOrder = await seaport.createSellOrder({
-          asset: {
-            tokenId: taskArguments.tokenId,
-            tokenAddress: getEnvVariable("NFT_CONTRACT_ADDRESS"),
-            schemaName: WyvernSchemaName.ERC721
-          },
-          startAmount: taskArguments.startPrice,
-          expirationTime: expirationTime,
-          waitForHighestBid: true,
-          paymentTokenAddress: wethAddress,
-          accountAddress: getEnvVariable("OWNER_ADDRESS"),
-        });
+        console.log(`Account ${getEnvVariable("OWNER_ADDRESS")} selling ${getEnvVariable("NFT_CONTRACT_ADDRESS")} token #${taskArguments.tokenId} on ${getEnvVariable("SELECTED_NETWORK")} for ${taskArguments.startPrice} payment ERC ${wethAddress}.`);
+        try {
+            const englishAuctionSellOrder = await seaport.createSellOrder({
+              asset: {
+                tokenId: taskArguments.tokenId,
+                tokenAddress: getEnvVariable("NFT_CONTRACT_ADDRESS"),
+                // schemaName: WyvernSchemaName.ERC721
+              },
+              startAmount: taskArguments.startPrice,
+              expirationTime: expirationTime,
+              waitForHighestBid: true,
+              paymentTokenAddress: wethAddress,
+              accountAddress: getEnvVariable("OWNER_ADDRESS"),
+            });
 
-        console.log(
-          `Successfully created an English auction sell order! ${englishAuctionSellOrder.asset.openseaLink}\n`
-        );
+            console.log(
+              `Successfully created an English auction sell order! ${englishAuctionSellOrder.asset.openseaLink}\n`
+            );
+
+        } catch (error) {
+            console.error(
+                `Failed! ${error}\n`
+            );
+        }
     });

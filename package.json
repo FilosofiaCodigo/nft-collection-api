@@ -1,7 +1,7 @@
 {
   "name": "nft-collection-api",
   "version": "1.0.0",
-  "description": "Node.js API for NFT collections supporting diverse features",
+  "description": "B4S smart-contracts",
   "main": "main.js",
   "dependencies": {
     "@0x/subproviders": "^6.6.5",
@@ -13,12 +13,11 @@
     "hardhat": "^2.7.0",
     "node-fetch": "^2.6.6",
     "opensea-js": "^3.0.2",
-    "web3": "^1.7.1",
-    "node-p5": "^1.0.4",
-    "yargs": "^17.4.1"
+    "web3": "^1.7.1"
   },
   "devDependencies": {
-    "@openzeppelin/contracts": "^4.4.0"
+    "@openzeppelin/contracts": "^4.4.0",
+    "hardhat-gas-reporter": "^1.0.8"
   },
   "scripts": {
     "shuffle": "node scripts/shuffle.js",

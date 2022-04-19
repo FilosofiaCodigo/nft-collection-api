@@ -8,11 +8,12 @@ require("./tasks/deploy.js");
 require("./tasks/mint.js");
 require("./tasks/sell.js");
 require("@nomiclabs/hardhat-etherscan");
+require("hardhat-gas-reporter");
 
 const { RINKEBY_RPC_URL, MAINNET_RPC_URL, MUMBAI_RPC_URL, POLYGON_RPC_URL, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API_KEY, SELECTED_NETWORK} = process.env;
 
 module.exports = {
-    solidity: "0.json.8.1",
+    solidity: "0.8.1",
     defaultNetwork: SELECTED_NETWORK,
     networks: {
         hardhat: {},
@@ -40,4 +41,7 @@ module.exports = {
     etherscan: {
         apiKey: ETHERSCAN_API_KEY,
     },
+    gasReporter: {
+        currency: 'EUR',
+    }
 }
