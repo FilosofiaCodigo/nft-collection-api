@@ -8,7 +8,7 @@ const crypto = require('crypto')
 const path = require('path');
 const {Storage} = require('@google-cloud/storage');
 
-const storage = new Storage();
+const storage = new Storage({keyFilename: 'key.json'});
 
 async function uploadSingleFile(file_path, file_name) {
   await storage.bucket(BUCKET_NAME).upload(file_path, {
